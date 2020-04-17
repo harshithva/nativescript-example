@@ -1,9 +1,23 @@
 <template>
   <Page>
-    <ActionBar title="My FirstApp!" />
-    <GridLayout columns="*" rows="*">
-      <Label class="message" :text="msg" col="0" row="0" />
-    </GridLayout>
+    <ActionBar title="Love Calculator" />
+    <FlexboxLayout flexDirection="column">
+      <TextView editable="false" class="h2 text-center">
+        <FormattedString>
+          <Span text="Welcome to Doctor Love!" fontWeight="Bold" />
+        </FormattedString>
+      </TextView>
+      <TextField :text="textFieldValue" hint="Enter Your name" height="80" class="h3" />
+      <TextField :text="textFieldValue" hint="Enter Your Crush name" height="80" class="h3" />
+      <button
+        backgroundColor="#f5365c"
+        color="#fff"
+        marginTop="40"
+        height="60"
+        borderRadius="10"
+        class="h2"
+      >Calculate</button>
+    </FlexboxLayout>
   </Page>
 </template>
 
@@ -19,7 +33,7 @@ export default {
 
 <style scoped>
 ActionBar {
-  background-color: #53ba82;
+  background-color: #f5365c;
   color: #ffffff;
 }
 
