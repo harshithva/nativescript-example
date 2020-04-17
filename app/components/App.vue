@@ -2,13 +2,19 @@
   <Page>
     <ActionBar title="Love Calculator" />
     <FlexboxLayout flexDirection="column">
+      <Image
+        src="https://i.ya-webdesign.com/images/facebook-reactions-png-4.png"
+        class="text-center"
+        height="200"
+        marginTop="20"
+      />
       <TextView editable="false" class="h2 text-center">
         <FormattedString>
           <Span text="Welcome to Doctor Love!" fontWeight="Bold" />
         </FormattedString>
       </TextView>
-      <TextField :text="textFieldValue" hint="Enter Your name" height="80" class="h3" />
-      <TextField :text="textFieldValue" hint="Enter Your Crush name" height="80" class="h3" />
+      <TextField :text="name" hint="Enter Your name" height="80" class="h3" />
+      <TextField :text="crush" hint="Enter Your Crush name" height="80" class="h3" />
       <button
         backgroundColor="#f5365c"
         color="#fff"
@@ -16,17 +22,26 @@
         height="60"
         borderRadius="10"
         class="h2"
+        @tap="onButtonTap"
       >Calculate</button>
     </FlexboxLayout>
   </Page>
 </template>
 
-<script >
+<script>
+import Home from "./Home";
 export default {
   data() {
     return {
-      msg: "Hello Harshith!"
+      msg: "Hello Harshith!",
+      name: "",
+      crush: ""
     };
+  },
+  methods: {
+    onButtonTap() {
+      this.$navigateTo(Home);
+    }
   }
 };
 </script>
@@ -44,3 +59,4 @@ ActionBar {
   color: #333333;
 }
 </style>
+
